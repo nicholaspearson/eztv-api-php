@@ -4,5 +4,14 @@ php:
   - '7.0'
   - '7.1'
 
+install:
+  - travis_retry composer install --no-interaction
+
 before_script:
   - mkdir -p build/logs
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+ - travis_retry ./vendor/bin/coveralls -v
