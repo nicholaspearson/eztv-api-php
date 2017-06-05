@@ -17,7 +17,7 @@ class Episode
         return $this->episode;
     }
 
-    public function setEpisode(int $episode) : void
+    public function setEpisode(int $episode)
     {
         $this->episode = $episode;
     }
@@ -27,7 +27,7 @@ class Episode
         return $this->episode;
     }
 
-    public function setSeason(int $season) : void
+    public function setSeason(int $season)
     {
         $this->season = $season;
     }
@@ -37,7 +37,7 @@ class Episode
         return $this->dateBased;
     }
 
-    public function setDateBased(bool $dateBased) : void
+    public function setDateBased(bool $dateBased)
     {
         $this->dateBased = $dateBased;
     }
@@ -47,7 +47,7 @@ class Episode
         return $this->torrent;
     }
 
-    public function setTorrent(Torrent $torrent) : void
+    public function setTorrent(Torrent $torrent)
     {
         $this->torrent = $torrent;
     }

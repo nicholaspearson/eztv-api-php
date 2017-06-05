@@ -18,7 +18,7 @@ class Show
         return $this->id;
     }
 
-    public function setId(int $id) : void
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -28,7 +28,7 @@ class Show
         return $this->title;
     }
 
-    public function setTitle(string $title) : void
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
@@ -38,7 +38,7 @@ class Show
         return $this->slug;
     }
 
-    public function setSlug(string $slug) : void
+    public function setSlug(string $slug)
     {
         $this->slug = $slug;
     }
@@ -48,7 +48,7 @@ class Show
         return $this->imdb;
     }
 
-    public function setImdb(string $imdb) : void
+    public function setImdb(string $imdb)
     {
         $this->imdb = $imdb;
     }
@@ -58,7 +58,7 @@ class Show
         return $this->episodes;
     }
 
-    public function setEpisodes(array $episodes) : void
+    public function setEpisodes(array $episodes)
     {
         $this->episodes = $episodes;
     }

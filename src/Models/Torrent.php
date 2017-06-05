@@ -17,7 +17,7 @@ class Torrent
         return $this->url;
     }
 
-    public function setUrl(string $url) : void
+    public function setUrl(string $url)
     {
         $this->url = $url;
     }
@@ -27,7 +27,7 @@ class Torrent
         return $this->quality;
     }
 
-    public function setQuality(string $quality) : void
+    public function setQuality(string $quality)
     {
         $this->quality = $quality;
     }
@@ -37,7 +37,7 @@ class Torrent
         return $this->seeds;
     }
 
-    public function setSeeds(int $seeds) : void
+    public function setSeeds(int $seeds)
     {
         $this->seeds = $seeds;
     }
@@ -47,7 +47,7 @@ class Torrent
         return $this->peers;
     }
 
-    public function setPeers(int $peers) : void
+    public function setPeers(int $peers)
     {
         $this->peers = $peers;
     }
