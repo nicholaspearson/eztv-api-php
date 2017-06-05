@@ -3,13 +3,15 @@
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-use EztvApi\Models\{
-    Episode, Show, Torrent
-};
+use EztvApi\Models\Episode;
+use EztvApi\Models\Show;
+use EztvApi\Models\Torrent;
 
 class EztvApi
 {
-    private $baseUrl, $client, $logger;
+    private $baseUrl;
+    private $client;
+    private $logger;
 
     public function __construct(array $config = ['baseUrl' => 'https://eztv.ag/'])
     {

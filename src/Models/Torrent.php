@@ -2,7 +2,10 @@
 
 class Torrent
 {
-    private $url, $quality, $seeds, $peers;
+    private $url;
+    private $quality;
+    private $seeds;
+    private $peers;
 
     public function __construct(string $url, string $quality, int $seeds = 0, int $peers = 0)
     {

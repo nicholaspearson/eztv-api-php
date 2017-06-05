@@ -2,16 +2,25 @@
 
 use PHPUnit\Framework\TestCase;
 use EztvApi\EztvApi;
-use EztvApi\Models\{
-    Show
-};
+use EztvApi\Models\Show;
 
+/**
+ * Testing the EztvApi class.
+ * @method void beforeAll()
+ * @method void testGetAList()
+ * @method void testGetShow()
+ * @method void testSearchShow()
+ */
 class EztvApiTest extends TestCase
 {
-    private $eztvApi, $show, $falseShow;
+    private $eztvApi;
+    private $show;
+    private $falseShow;
 
     /**
+     * Method for setting up the test values.
      * @before
+     * @return void
      */
     public function beforeAll()
     {
@@ -22,6 +31,10 @@ class EztvApiTest extends TestCase
         $this->falseShow = new Show(12345, 'False Show Name', 'false-show-name');
     }
 
+    /**
+     * Testing the method which retrieves a list of shows.
+     * @return array - List of available shows.
+     */
     public function testGetAList()
     {
         $allShows = $this->eztvApi->getAllShows();
@@ -33,6 +46,10 @@ class EztvApiTest extends TestCase
         $this->assertObjectHasAttribute('slug', $allShows[0]);
     }
 
+    /**
+     * Testing the method which retrieves a show.
+     * @return Show - A show.
+     */
     public function testGetShow()
     {
         $show = $this->eztvApi->getShow($this->show);
@@ -42,6 +59,10 @@ class EztvApiTest extends TestCase
         $this->assertObjectHasAttribute('slug', $show);
     }
 
+    /**
+     * Testing the moethod which searches for a show.
+     * @return Show - A show.
+     */
     public function testSearchShow()
     {
         $show = $this->eztvApi->searchShow($this->show);

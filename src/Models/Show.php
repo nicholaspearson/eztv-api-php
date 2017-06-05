@@ -2,7 +2,11 @@
 
 class Show
 {
-    private $id, $title, $slug, $imdb, $episodes;
+    private $id;
+    private $title;
+    private $slug;
+    private $imdb;
+    private $episodes;
 
     public function __construct(int $id, string $title, string $slug, string $imdb = null)
     {
@@ -43,7 +47,7 @@ class Show
         $this->slug = $slug;
     }
 
-    public function getImdb() : string
+    public function getImdb() : ?string
     {
         return $this->imdb;
     }
