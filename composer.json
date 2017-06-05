@@ -1,0 +1,25 @@
+{
+    "name": "sjoerd-thijsse/eztv-api-php",
+    "description": "An EZTV API wrapper to get data from eztv.ag.",
+    "version": "1.0.0",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sjoerd Thijsse",
+            "email": "sjoerdthijsse@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "fabpot/goutte": "^3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "EztvApi\\": "src"
+        }
+    }
+}
