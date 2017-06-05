@@ -5,7 +5,6 @@
     <whitelist>
       <directory>./src</directory>
       <exclude>
-        <directory>./public</directory>
         <directory>./vendor</directory>
         <directory>./tests</directory>
       </exclude>
