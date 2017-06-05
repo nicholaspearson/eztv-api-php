@@ -1,6 +1,7 @@
 # Eztv Api PHP
 
 [![Build Status](https://travis-ci.org/SCThijsse/eztv-api-php.svg?branch=master)](https://travis-ci.org/SCThijsse/eztv-api-php)
+[![Coverage Status](https://coveralls.io/repos/github/SCThijsse/eztv-api-php/badge.svg?branch=master)](https://coveralls.io/github/SCThijsse/eztv-api-php?branch=master)
 
 An EZTV API wrapper to get data from [eztv.ag](https://eztv.ag/).
 
