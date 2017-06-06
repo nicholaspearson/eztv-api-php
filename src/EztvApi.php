@@ -7,12 +7,38 @@ use EztvApi\Models\Episode;
 use EztvApi\Models\Show;
 use EztvApi\Models\Torrent;
 
+/**
+ * The eztv API class.
+ * @method Crawler get(string $uri, array $query = []) : Crawler
+ * @method Show getShowData(Crawler $crawler, Show $show) : Show
+ * @method array getAllShows() : array
+ * @method Show getShow(Show $show) : Show
+ * @method Show searchShow(Show $show) : Show
+ */
 class EztvApi
 {
+    /**
+     * The base url for the eztv API.
+     * @var string
+     */
     private $baseUrl;
+
+    /**
+     * The client for the eztv API.
+     * @var Client
+     */
     private $client;
+
+    /**
+     * The logger for the eztv API.
+     * @var Logger
+     */
     private $logger;
 
+    /**
+     * Create a new eztv API object.
+     * @param array $config - The configuration array for the eztv API.
+     */
     public function __construct(array $config = ['baseUrl' => 'https://eztv.ag/'])
     {
         $this->baseUrl = $config['baseUrl'];
@@ -20,6 +46,12 @@ class EztvApi
         $this->logger = $config['logger'] ?? null;
     }
 
+    /**
+     * Send a GET request to eztv.ag
+     * @param  string $uri - The endpoint to send the request to.
+     * @param  array $query - Optional parameters to send.
+     * @return Crawler - Crawler object to extract data.
+     */
     private function get(string $uri, array $query = []) : Crawler
     {
         if ($this->logger) {
@@ -31,6 +63,12 @@ class EztvApi
         return $this->client->request('GET', "{$this->baseUrl}{$uri}?" . http_build_query($query));
     }
 
+    /**
+     * Get show data with a crawler and a show object.
+     * @param  Crawler $crawler - The crawler to get data from.
+     * @param  Show $show - The show to attach the data to.
+     * @return Show - The show enriched with more data.
+     */
     private function getShowData(Crawler $crawler, Show $show) : Show
     {
         $episodes = $crawler->filter('tr.forum_header_border[name="hover"]')->each(function (Crawler $node) {
@@ -77,6 +115,10 @@ class EztvApi
         return $show;
     }
 
+    /**
+     * Get an array with all the shows.
+     * @return array - An array with all the shows.
+     */
     public function getAllShows() : array
     {
         $crawler = $this->get('showlist/');
@@ -87,6 +129,11 @@ class EztvApi
         });
     }
 
+    /**
+     * Get a show from the shows page.
+     * @param  Show $show - The show to enrich.
+     * @return Show - The show enriched with more data.
+     */
     public function getShow(Show $show) : Show
     {
         $crawler = $this->get("shows/{$show->getId()}/{$show->getSlug()}/");
@@ -102,6 +149,11 @@ class EztvApi
         return $this->getShowData($crawler, $show);
     }
 
+    /**
+     * Search for a show.
+     * @param  Show $show - The show to enrich.
+     * @return Show - The show enriched with more data.
+     */
     public function searchShow(Show $show) : Show
     {
         $crawler = $this->get('search/', ['q2' => $show->getId()]);
