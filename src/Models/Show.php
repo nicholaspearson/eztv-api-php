@@ -74,7 +74,7 @@ class Show
      * Setter for show id.
      * @param int $showId - The value to be set for show id.
      */
-    public function setId(int $showId) : void
+    public function setShowId(int $showId) : void
     {
         $this->showId = $showId;
     }
