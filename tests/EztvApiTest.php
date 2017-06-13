@@ -44,6 +44,12 @@ class EztvApiTest extends TestCase
         $this->noMagnetShow = new Show(556, 'Grimm', 'grimm');
     }
 
+    /**
+     * Test a show
+     * @param  Show $show - The show to test.
+     * @ignore
+     * @return null
+     */
     private function testShow(Show $show)
     {
         $this->assertObjectHasAttribute('title', $show);
