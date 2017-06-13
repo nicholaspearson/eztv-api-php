@@ -6,7 +6,7 @@
  * @method void setEpisode(int $episode)
  * @method int getSeason() : int
  * @method void setSeason(int $season)
- * @method bool getDateBased() : bool
+ * @method bool isDateBased() : bool
  * @method void setDateBased(bool $dateBased)
  * @method ?Torrent getTorrent() : ?Torrent
  * @method void setTorrent(Torrent $torrent = null)
@@ -92,7 +92,7 @@ class Episode
      * Getter for date based.
      * @return bool - The value for date based.
      */
-    public function getDateBased() : bool
+    public function isDateBased() : bool
     {
         return $this->dateBased;
     }
