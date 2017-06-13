@@ -20,7 +20,7 @@ class ShowTest extends TestCase
     private $episode;
 
     /**
-     * The show object without hte default parameters.
+     * The show object without the default parameters.
      * @var Show
      */
     private $show;
