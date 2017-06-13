@@ -42,7 +42,7 @@ class EztvApiTest extends TestCase
         $this->assertTrue(count($allShows) > 0);
 
         $this->assertObjectHasAttribute('title', $allShows[0]);
-        $this->assertObjectHasAttribute('id', $allShows[0]);
+        $this->assertObjectHasAttribute('showId', $allShows[0]);
         $this->assertObjectHasAttribute('slug', $allShows[0]);
     }
 
@@ -55,7 +55,7 @@ class EztvApiTest extends TestCase
         $show = $this->eztvApi->getShow($this->show);
 
         $this->assertObjectHasAttribute('title', $show);
-        $this->assertObjectHasAttribute('id', $show);
+        $this->assertObjectHasAttribute('showId', $show);
         $this->assertObjectHasAttribute('slug', $show);
     }
 
@@ -68,7 +68,7 @@ class EztvApiTest extends TestCase
         $show = $this->eztvApi->searchShow($this->show);
 
         $this->assertObjectHasAttribute('title', $show);
-        $this->assertObjectHasAttribute('id', $show);
+        $this->assertObjectHasAttribute('showId', $show);
         $this->assertObjectHasAttribute('slug', $show);
     }
 }
