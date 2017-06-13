@@ -138,7 +138,7 @@ class EztvApi
      */
     public function getShow(Show $show) : Show
     {
-        $crawler = $this->get("shows/{$show->getId()}/{$show->getSlug()}/");
+        $crawler = $this->get("shows/{$show->getShowId()}/{$show->getSlug()}/");
 
         $imdb = $crawler->filter('div[itemtype="http://schema.org/AggregateRating"]')->filter('a[target="_blank"]');
 
@@ -158,7 +158,7 @@ class EztvApi
      */
     public function searchShow(Show $show) : Show
     {
-        $crawler = $this->get('search/', ['q2' => $show->getId()]);
+        $crawler = $this->get('search/', ['q2' => $show->getShowId()]);
 
         return $this->getShowData($crawler, $show);
     }
