@@ -64,9 +64,9 @@ class EpisodeTest extends TestCase
         $this->episode->setEpisode(0);
         $this->assertEquals(0, $this->episode->getEpisode());
 
-        $this->assertEquals(false, $this->episode->getDateBased());
+        $this->assertEquals(false, $this->episode->isDateBased());
         $this->episode->setDateBased(true);
-        $this->assertEquals(true, $this->episode->getDateBased());
+        $this->assertEquals(true, $this->episode->isDateBased());
 
         $this->assertEquals(null, $this->episode->getTorrent());
         $this->episode->setTorrent($this->torrent);
@@ -94,9 +94,9 @@ class EpisodeTest extends TestCase
         $this->episodeDefault->setEpisode(0);
         $this->assertEquals(0, $this->episodeDefault->getEpisode());
 
-        $this->assertEquals(false, $this->episodeDefault->getDateBased());
+        $this->assertEquals(false, $this->episodeDefault->isDateBased());
         $this->episodeDefault->setDateBased(true);
-        $this->assertEquals(true, $this->episodeDefault->getDateBased());
+        $this->assertEquals(true, $this->episodeDefault->isDateBased());
 
         $this->assertEquals($this->torrent, $this->episodeDefault->getTorrent());
         $this->episodeDefault->setTorrent(null);
