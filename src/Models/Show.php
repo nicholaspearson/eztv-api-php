@@ -2,8 +2,8 @@
 
 /**
  * Model for the show.
- * @method int getId() : int
- * @method void setId(int $id)
+ * @method int getShowId() : int
+ * @method void setShowId(int $showId)
  * @method string getTitle() : string
  * @method void setTitle(string $title)
  * @method string getSlug() : string
@@ -19,7 +19,7 @@ class Show
      * The id of the show.
      * @var int
      */
-    private $id;
+    private $showId;
 
     /**
      * The title of the show.
@@ -47,14 +47,14 @@ class Show
 
     /**
      * Create a new show object.
-     * @param int $id - The id of the show.
+     * @param int $showId - The id of the show.
      * @param string $title -  he title of the show.
      * @param string $slug - The slug of the show.
      * @param string $imdb - The imdb id for the show.
      */
-    public function __construct(int $id, string $title, string $slug, string $imdb = null)
+    public function __construct(int $showId, string $title, string $slug, string $imdb = null)
     {
-        $this->id = $id;
+        $this->showId = $showId;
         $this->title = $title;
         $this->slug = $slug;
         $this->imdb = $imdb;
@@ -62,21 +62,21 @@ class Show
     }
 
     /**
-     * Getter for id.
-     * @return int - The value for id.
+     * Getter for show id.
+     * @return int - The value for show id.
      */
-    public function getId() : int
+    public function getShowId() : int
     {
-        return $this->id;
+        return $this->showId;
     }
 
     /**
-     * Setter for id.
-     * @param int $id - The value to be set for id.
+     * Setter for show id.
+     * @param int $showId - The value to be set for show id.
      */
-    public function setId(int $id) : void
+    public function setId(int $showId) : void
     {
-        $this->id = $id;
+        $this->showId = $showId;
     }
 
     /**
