@@ -92,12 +92,14 @@ class EztvApi
 
             if (preg_match($seasonBased, $title, $match) || preg_match($vtv, $title, $match)) {
                 $episode = new Episode($match[1], $match[2], false);
-            } elseif (preg_match($dateBased, $title, $match)) {
+            } else if (preg_match($dateBased, $title, $match)) {
                 $episode = new Episode($match[1], preg_replace('/\s/', '', $match[2]), true);
-            } else {
+            }
+            
+            if (empty($episode)) {
                 return;
             }
-
+            
             preg_match('/(\d{3,4})p/', $title, $matchQual);
             $quality = $matchQual ? $matchQual[1] : '480p';
 
