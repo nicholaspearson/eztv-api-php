@@ -59,15 +59,15 @@ class ShowTest extends TestCase
     {
       $this->assertInstanceOf(Show::class, $this->show);
 
-      $this->assertObjectHasAttribute('id', $this->show);
+      $this->assertObjectHasAttribute('showId', $this->show);
       $this->assertObjectHasAttribute('title', $this->show);
       $this->assertObjectHasAttribute('slug', $this->show);
       $this->assertObjectHasAttribute('imdb', $this->show);
       $this->assertObjectHasAttribute('episodes', $this->show);
 
-      $this->assertEquals(1, $this->show->getId());
-      $this->show->setId(0);
-      $this->assertEquals(0, $this->show->getId());
+      $this->assertEquals(1, $this->show->getShowId());
+      $this->show->setShowId(0);
+      $this->assertEquals(0, $this->show->getShowId());
 
       $this->assertEquals('title', $this->show->getTitle());
       $this->show->setTitle('changed');
@@ -96,15 +96,15 @@ class ShowTest extends TestCase
     {
       $this->assertInstanceOf(Show::class, $this->showDefault);
 
-      $this->assertObjectHasAttribute('id', $this->showDefault);
+      $this->assertObjectHasAttribute('showId', $this->showDefault);
       $this->assertObjectHasAttribute('title', $this->showDefault);
       $this->assertObjectHasAttribute('slug', $this->showDefault);
       $this->assertObjectHasAttribute('imdb', $this->showDefault);
       $this->assertObjectHasAttribute('episodes', $this->showDefault);
 
-      $this->assertEquals(1, $this->showDefault->getId());
-      $this->showDefault->setId(0);
-      $this->assertEquals(0, $this->showDefault->getId());
+      $this->assertEquals(1, $this->showDefault->getShowId());
+      $this->showDefault->setShowId(0);
+      $this->assertEquals(0, $this->showDefault->getShowId());
 
       $this->assertEquals('title', $this->showDefault->getTitle());
       $this->showDefault->setTitle('changed');
