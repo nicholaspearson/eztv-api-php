@@ -47,7 +47,7 @@ class EztvApiTest extends TestCase
     /**
      * Test a show
      * @param  Show $show - The show to test.
-     * @ignore
+     * @codeCoverageIgnore
      * @return null
      */
     private function testShow(Show $show)
