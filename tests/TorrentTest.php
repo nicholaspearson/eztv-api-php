@@ -28,7 +28,7 @@ class TorrentTest extends TestCase
      * @before
      * @return void
      */
-    public function beforeAll()
+    public function beforeAll() : void
     {
         $this->torrent = new Torrent('url', 'quality', 1, 1);
         $this->torrentDefault = new Torrent('url', 'quality');
@@ -38,7 +38,7 @@ class TorrentTest extends TestCase
      * Testing the Torrent class without the default parameters.
      * @return void
      */
-    public function testTorrent()
+    public function testTorrent() : void
     {
         $this->assertInstanceOf(Torrent::class, $this->torrent);
 
@@ -68,7 +68,7 @@ class TorrentTest extends TestCase
      * Testing the Torrent class with the default parameters.
      * @return void
      */
-    public function testDefaultTorrent()
+    public function testDefaultTorrent() : void
     {
         $this->assertInstanceOf(Torrent::class, $this->torrentDefault);
 
