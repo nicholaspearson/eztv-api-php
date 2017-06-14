@@ -42,7 +42,7 @@ class ShowTest extends TestCase
      * @before
      * @return void
      */
-    public function beforeAll()
+    public function beforeAll() : void 
     {
         $this->torrent = new Torrent('url', 'quality');
         $this->episode = new Episode(1, 1, false, $this->torrent);
@@ -55,7 +55,7 @@ class ShowTest extends TestCase
      * Testing the Show class without the default parameters.
      * @return void
      */
-    public function testShow()
+    public function testShow() : void
     {
       $this->assertInstanceOf(Show::class, $this->show);
 
@@ -92,7 +92,7 @@ class ShowTest extends TestCase
      * Testing the Show class with the default parameters.
      * @return void
      */
-    public function testDefaultShow()
+    public function testDefaultShow() : void
     {
       $this->assertInstanceOf(Show::class, $this->showDefault);
 
