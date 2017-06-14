@@ -8,7 +8,7 @@ use EztvApi\Models\Show;
 /**
  * Testing the EztvApi class.
  * @method beforeAll()
- * @method testShow()
+ * @method checkShowAttributes()
  * @method testGetAList()
  * @method testGetShow()
  * @method testSearchShow()
@@ -45,12 +45,12 @@ class EztvApiTest extends TestCase
     }
 
     /**
-     * Test a show
+     * Test a show.
      * @param  Show $show - The show to test.
      * @codeCoverageIgnore
      * @return null
      */
-    private function testShow(Show $show) : void 
+    private function checkShowAttributes(Show $show) : void 
     {
         $this->assertObjectHasAttribute('title', $show);
         $this->assertObjectHasAttribute('showId', $show);
@@ -81,7 +81,7 @@ class EztvApiTest extends TestCase
     public function testGetShow() : void
     {
         $show = $this->eztvApi->getShow($this->show);
-        $this->testShow($show);
+        $this->checkShowAttributes($show);
     }
 
     /**
@@ -91,7 +91,7 @@ class EztvApiTest extends TestCase
     public function testSearchShow() : void
     {
         $show = $this->eztvApi->searchShow($this->show);
-        $this->testShow($show);
+        $this->checkShowAttributes($show);
     }
 
     /**
@@ -101,7 +101,7 @@ class EztvApiTest extends TestCase
     public function testDateBasedShow() : void
     {
         $show = $this->eztvApi->getShow($this->dateBasedShow);
-        $this->testShow($show);
+        $this->checkShowAttributes($show);
     }
 
     // /**
@@ -111,7 +111,7 @@ class EztvApiTest extends TestCase
     // public function testNoEpisodesShow() : void
     // {
     //     $show = $this->eztvApi->getShow($this->noEpisodesShow);
-    //     $this->testShow($show);
+    //     $this->checkShowAttributes($show);
     // }
 
     /**
@@ -121,7 +121,7 @@ class EztvApiTest extends TestCase
     public function testNoMagnetShow() : void
     {
         $show = $this->eztvApi->getShow($this->noMagnetShow);
-        $this->testShow($show);
+        $this->checkShowAttributes($show);
     }
 
 }
