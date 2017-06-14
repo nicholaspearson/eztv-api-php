@@ -40,7 +40,7 @@ class EztvApiTest extends TestCase
         $this->show = new Show(449, '10 o\'Clock Live', '10-o-clock-live');
         $this->falseShow = new Show(12345, 'False Show Name', 'false-show-name');
         $this->dateBasedShow = new Show(817, '60 Minutes US', '60-minutes-us');
-        $this->noEpisodesShow = new Show(2077, 'Girlboss', 'girlboss');
+        $this->noEpisodesShow = new Show(350, '2010 Vancouver Winter Olympics', '2010-vancouver-winter-olympics');
         $this->noMagnetShow = new Show(556, 'Grimm', 'grimm');
     }
 
