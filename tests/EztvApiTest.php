@@ -31,7 +31,7 @@ class EztvApiTest extends TestCase
      * @before
      * @return void
      */
-    public function beforeAll()
+    public function beforeAll() : void
     {
         $this->eztvApi = new EztvApi([
             'baseUrl' => 'https://eztv.ag/',
@@ -50,7 +50,7 @@ class EztvApiTest extends TestCase
      * @codeCoverageIgnore
      * @return null
      */
-    private function testShow(Show $show)
+    private function testShow(Show $show) : void 
     {
         $this->assertObjectHasAttribute('title', $show);
         $this->assertObjectHasAttribute('showId', $show);
@@ -63,7 +63,7 @@ class EztvApiTest extends TestCase
      * Testing the method which retrieves a list of shows.
      * @return array - List of available shows.
      */
-    public function testGetAList()
+    public function testGetAList() : void
     {
         $allShows = $this->eztvApi->getAllShows();
         $this->assertNotEmpty($allShows);
@@ -78,7 +78,7 @@ class EztvApiTest extends TestCase
      * Testing the method which retrieves a show.
      * @return Show - A show.
      */
-    public function testGetShow()
+    public function testGetShow() : void
     {
         $show = $this->eztvApi->getShow($this->show);
         $this->testShow($show);
@@ -88,7 +88,7 @@ class EztvApiTest extends TestCase
      * Testing the method which searches for a show.
      * @return Show - A show.
      */
-    public function testSearchShow()
+    public function testSearchShow() : void
     {
         $show = $this->eztvApi->searchShow($this->show);
         $this->testShow($show);
@@ -98,7 +98,7 @@ class EztvApiTest extends TestCase
      * Testing a datebased show.
      * @return Show - A show.
      */
-    public function testDateBasedShow()
+    public function testDateBasedShow() : void
     {
         $show = $this->eztvApi->getShow($this->dateBasedShow);
         $this->testShow($show);
@@ -108,7 +108,7 @@ class EztvApiTest extends TestCase
     //  * Testing a show with no episodes.
     //  * @return Show - A show.
     //  */
-    // public function testNoEpisodesShow()
+    // public function testNoEpisodesShow() : void
     // {
     //     $show = $this->eztvApi->getShow($this->noEpisodesShow);
     //     $this->testShow($show);
@@ -118,7 +118,7 @@ class EztvApiTest extends TestCase
      * Testing a show with no magnet.
      * @return Show - A show.
      */
-    public function testNoMagnetShow()
+    public function testNoMagnetShow() : void
     {
         $show = $this->eztvApi->getShow($this->noMagnetShow);
         $this->testShow($show);
