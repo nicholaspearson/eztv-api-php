@@ -5,6 +5,7 @@
 
 An EZTV API wrapper to get data from [eztv.ag](https://eztv.ag/).
 
+
 ## License
 
 MIT License
