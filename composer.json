@@ -1,5 +1,5 @@
 {
-    "name": "sjoerd-thijsse/eztv-api-php",
+    "name": "nicholaspearson/eztv-api-php",
     "description": "An EZTV API wrapper to get data from eztv.ag.",
     "version": "1.0.0",
     "license": "MIT",
